@@ -9,7 +9,7 @@ $fruit = 1000;
 $te2st = 1;//переменная может содержать цифру в любом месте, но только после буквы//
 //$%test = 1;//Переменая не может начинаться с спец-символа прим: #,%,&,+,/,*,=. и т.д//
 $_test_rrr = 123;
-$my_lilttle_pony = 'my little ponny'; //Переменная написана в стиле SnakeСase//
-$myLittlePony = 'MyLittlePony'; //Переменная написана в стиле CamelCase//
+$my_lilttle_pony = 'my little ponny'; //Переменная написано в стиле SnakeСase//
+$myLittlePony = 'MyLittlePony'; //Переменная написано в стиле CamelCase//
 
 echo $my_lilttle_pony,'<br>',$myLittlePony;
