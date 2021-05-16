@@ -13,4 +13,3 @@
     $myLittlePony = 'MyLittlePony'; //Переменная написано в стиле CamelCase//
 
 echo $my_lilttle_pony,'<br>',$myLittlePony;
-?>
