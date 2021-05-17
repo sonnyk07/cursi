@@ -1,1 +1,1 @@
-<?php    var_dump($test);    1/0;    require 'qwe';    echo 123;?>
+<?php    var_dump($test);    1/0;    require 'qwe';    echo 123;
