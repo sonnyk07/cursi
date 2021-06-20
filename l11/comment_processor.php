@@ -1,5 +1,12 @@
 <?php
-$comment= serialize($_POST);
+$comment = serialize($_POST);
+
+$error = worldFilter($_POST['comment']);
+if ($error){
+    header("location: error.php?massage={$error}");
+    exit;
+}
+
 $dir = __DIR__ . '/storage/' . date('d-m-y');
 if (!is_dir($dir)){ //зодания файла//
     mkdir($dir);
@@ -11,5 +18,18 @@ if (file_exists($rout)){//проверка если фал существует/
     exit;//конец выполения программы//
 }
 
-file_put_contents($rout, $comment);//создания путя и фалы с данными в переменных//
-header('location: forms.php');//переаодресация скрипта//
+    file_put_contents($rout, $comment);//создания путя и фалы с данными в переменных//
+    header('location: forms.php');//переаодресация скрипта//
+
+function worldFilter(string $message): ? string
+{
+    $blackList = ['loh', 'nigga', 'jopa'];
+    foreach ($blackList as $world){
+    $contains = stripos($message, $world);
+    if ($contains !== false) {
+        return "World {$world} is not accetible!";
+
+    }
+}
+return null;
+}

@@ -1,7 +1,7 @@
 <?php require __DIR__ .'/header.php';
 $comments = require __DIR__ . '/comments_list.php';
 ?>
-<table class="container">
+<main class="container">
     <div class="bg-light p-5 rounded">
         <form action="comment_processor.php" method="POST">
             <div>
@@ -50,18 +50,17 @@ $comments = require __DIR__ . '/comments_list.php';
     <?php foreach ($commentsList as $file =>$comment) : ?>
     <tr>
     <td>
-        Name: <?=$comment['username']?><br>
-        Gender: <?=$comment['gender']?><br>
+        Name: <?=$comment['username'] ?? 'undifine'?><br>
+        Gender: <?=$comment['gender'] ?? 'undifine'?><br>
         Programming language: <?=$comment['programming_language']?>
 
     </td>
     <td>
-        <?= date('D-m-y',$comment['time'])?><br>
-        <?=nl2br($comment['comment'])?>
+        <?= date('D-m-Y, H:i',$comment['time'])?><br>
+       <em><?=nl2br($comment['comment'])?></em>
     </tr>
         <?php endforeach;?>
     <?php endforeach;?>
 </div>
-</table>
 </main>
 <?php require __DIR__ .'/footer.php';?>
